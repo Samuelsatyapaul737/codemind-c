@@ -4,7 +4,7 @@ int main()
 
     int n, sqr, rem, sum=0;
 
-  
+    
     scanf("%d",&n);
 
     sqr = n*n; 
