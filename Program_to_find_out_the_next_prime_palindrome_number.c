@@ -1,40 +1,37 @@
-#include <stdio.h>
-#include <math.h>
+#include<stdio.h>
 int main()
 {
-  long n, t, r = 0, c, d;
-  scanf("%ld", &n);
-
-  while (1)
-  {
-    n++;
-    t = n;
-    while(t)
+    int n,i,rev=0,r,m,temp,fact=0;
+    scanf("%d",&n);
+    i=n+1;
+    while(i>0)
     {
-      r = r*10;
-      r = r + t%10;
-      t = t/10;
+        rev=0;
+        temp=i;
+        fact=0;
+        while(temp>0)
+        {
+            r=temp%10;
+            rev=(rev*10)+r;
+            temp/=10;
+        }
+        if(i==rev)
+        {
+            for(m=1;m<=i;m++)
+            {
+                if(i%m==0)
+                {
+                    fact++;
+                }
+            }
+            if(fact==2)
+            {
+                printf("%d",i);
+                break;
+            }
+        }
+        i++;
     }
-
-
-    if (r == n)
-    {
-      d = (int)sqrt(n);
-
-   
-      for (c = 2; c <= d; c++)
-      {
-        if (n%c == 0)
-          break;
-      }
-      if (c == d+1)
-        break;
-    }
-    r = 0;
-  }
-
-  printf("%ld
-",n);
-
-  return 0;
+    return 0;
 }
+ 
