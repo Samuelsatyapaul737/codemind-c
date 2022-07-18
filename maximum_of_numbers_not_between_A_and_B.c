@@ -1,32 +1,35 @@
 #include<stdio.h>
 int main()
 {
-    int n,max=0;
+    int n;
     scanf("%d",&n);
     int a[n],i;
     for(i=0;i<n;i++)
     {
         scanf("%d",&a[i]);
     }
-    int p,q;
-    scanf("%d%d",&p,&q);
+    int x,y;
+    scanf("%d %d",&x,&y);
+    int max=a[0];
+    int c=0;
     for(i=0;i<n;i++)
     {
-        if(a[i]<p || a[i]>q)
+        if(!(a[i]>=x && a[i]<=y))
         {
-            if(max<a[i])
+            if( max<a[i])
             {
                 max=a[i];
+                c++;
             }
         }
     }
-    if(max==0)
+    if(c==0)
     {
         printf("-1");
     }
     else
     {
-        printf("%d",max);
+    printf("%d",max);
     }
-    
-}
+        
+    }
